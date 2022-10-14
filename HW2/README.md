@@ -256,5 +256,4 @@ def main():
   run_regression("logistic")
 ```
 
-# The entire program can be found on github:
-[Program]()
+# The entire program can be found on [Github](https://github.com/DeBestTrap/Intro-to-Machine-Learning/blob/main/HW2/HW2.p)

@@ -276,5 +276,19 @@ The results from the testing data:
 
 ![Naive Bayers](./images/nb.png)
 
-# Code:
-The code can be found on [Github]()
+## b) Code:
+The code can be found on Github:
+
+[https://github.com/DeBestTrap/Intro-to-Machine-Learning/tree/main/HW3](https://github.com/DeBestTrap/Intro-to-Machine-Learning/tree/main/HW3)
+
+Specifically for logistic regression:
+
+[https://github.com/DeBestTrap/Intro-to-Machine-Learning/blob/main/HW3/logistic_reg.py](https://github.com/DeBestTrap/Intro-to-Machine-Learning/blob/main/HW3/logistic_reg.py)
+
+Specifically for Naive Bayes:
+
+[https://github.com/DeBestTrap/Intro-to-Machine-Learning/blob/main/HW3/nb.py](https://github.com/DeBestTrap/Intro-to-Machine-Learning/blob/main/HW3/nb.py)
+
+Specifically for the testing and displaying of data:
+
+[https://github.com/DeBestTrap/Intro-to-Machine-Learning/blob/main/HW3/main.py](https://github.com/DeBestTrap/Intro-to-Machine-Learning/blob/main/HW3/main.py)

@@ -1,3 +1,6 @@
+# TO VIEW THE RENDERED LATEX EQUATIONS SEE PDF IN REPO
+I didn't realize that Github did not render equations enclosed in $$
+
 # How to run program:
 ```
 $ python main.py

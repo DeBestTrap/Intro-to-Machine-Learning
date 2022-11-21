@@ -48,30 +48,29 @@ python mysgdsvm.py "MNIST-13.csv" 1 5 --plot --results
 ## b)
 ### Symmetry
 
-<!-- ![](https://latex.codecogs.com/svg.image?=x=5) -->
-
-<div align="center"> <img src="https://latex.codecogs.com/svg.image?
-    K(x_i, x_j)
-    =
-    K_1(x_i,x_j)
-    K_2(x_i,x_j)
-" /> </div>
+$$
+  K(x_i, x_j)
+  =
+  K_1(x_i,x_j)
+  K_2(x_i,x_j)
+$$
 
 Since $K_1$ and $K_2$ are valid kernel functions,
 
-<div align="center"> <img src="https://latex.codecogs.com/svg.image?
-    K(x_i, x_j)
-    =
-    K_1(x_j,x_i)
-    K_2(x_j,x_i)
-    \triangleq
-    K(x_j, x_i)
-" /> </div>
+$$
+  K(x_i, x_j)
+  =
+  K_1(x_j,x_i)
+  K_2(x_j,x_i)
+  \triangleq
+  K(x_j, x_i)
+$$
 
-<div align="center"> <img src="https://latex.codecogs.com/svg.image?
-    \therefore 
-    \text{K is symmetric}
-" /> </div>
+$$
+  \therefore 
+  \text{K is symmetric}
+$$
+
 $\therefore$ K is symmetric.
 
 ### Positive Semi-Definite

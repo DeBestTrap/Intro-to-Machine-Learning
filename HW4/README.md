@@ -1,4 +1,4 @@
-This homework implements the Pegasos algorithm from [Pegasos: Primal Estimated sub-GrAdient SOlver for SVM]() on the [MNIST-13]() dataset.
+This homework implements the Pegasos algorithm from [Pegasos: Primal Estimated sub-GrAdient SOlver for SVM](https://github.com/DeBestTrap/Intro-to-Machine-Learning/blob/main/HW4/files/pegasos.pdf) on the [MNIST-13](https://github.com/DeBestTrap/Intro-to-Machine-Learning/blob/main/HW4/MNIST-13.csv) dataset.
 
 How to use:
 ```
@@ -18,11 +18,11 @@ optional flags
     be included.
 ```
 
-Example:
+Example, shows the plot for the "Summary and Results" section:
 ```
 python mysgdsvm.py "MNIST-13.csv" 1 5 --plot --results
 ```
-Gives the plots for the "Summary and Results" section.
+
 
 # Q1
 ## a)

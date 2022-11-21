@@ -25,14 +25,64 @@ python mysgdsvm.py "MNIST-13.csv" 1 5 --plot --results
 
 
 # Q1
-## a)
+<!-- ## a)
+### Symmetry
+### Positive Semi-Definite
 ![a](./images/a.png)
 ## b)
+### Symmetry
+### Positive Semi-Definite
 ![b](./images/b.png)
 ## c)
+### Symmetry
+### Positive Semi-Definite
 ![c](./images/c.png)
 ## d)
-![d](./images/d.png)
+### Symmetry
+### Positive Semi-Definite
+![d](./images/d.png) -->
+## a)
+### Symmetry
+### Positive Semi-Definite
+
+## b)
+### Symmetry
+
+<!-- ![](https://latex.codecogs.com/svg.image?=x=5) -->
+
+<div align="center"> <img src="https://latex.codecogs.com/svg.image?
+    K(x_i, x_j)
+    =
+    K_1(x_i,x_j)
+    K_2(x_i,x_j)
+" /> </div>
+
+Since $K_1$ and $K_2$ are valid kernel functions,
+
+<div align="center"> <img src="https://latex.codecogs.com/svg.image?
+    K(x_i, x_j)
+    =
+    K_1(x_j,x_i)
+    K_2(x_j,x_i)
+    \triangleq
+    K(x_j, x_i)
+" /> </div>
+
+<div align="center"> <img src="https://latex.codecogs.com/svg.image?
+    \therefore 
+    \text{K is symmetric}
+" /> </div>
+$\therefore$ K is symmetric.
+
+### Positive Semi-Definite
+
+## c)
+### Symmetry
+### Positive Semi-Definite
+
+## d)
+### Symmetry
+### Positive Semi-Definite
 
 # Q2
 

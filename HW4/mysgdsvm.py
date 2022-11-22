@@ -8,13 +8,22 @@ X_ = None
 y_ = None
 
 def get_data(filename:str):
-  df = pd.read_csv(filename, header=None)
-  X_ = df.to_numpy()
-  y_ = X_[:,0]
-  X_ = np.delete(X_, 0, axis=1)
+  '''
+  Retrieves data and uses the first column as class labels. 
+  '''
+  global X_
+  global y_
+  if X_ is None:
+    df = pd.read_csv(filename, header=None)
+    X_ = df.to_numpy()
+    y_ = X_[:,0]
+    X_ = np.delete(X_, 0, axis=1)
   return X_, y_
 
 def process_y_(y_:np.ndarray):
+  '''
+  Process the class labels to be 1 and -1.
+  '''
   new_y_ = np.zeros(y_.shape[0])
   for i, y in enumerate(y_):
     if y == 3:
@@ -24,11 +33,14 @@ def process_y_(y_:np.ndarray):
   return new_y_
   
 def mysgdsvm(filename, k, numruns, max_iter=100, lambd=1e5):
-  global X_
-  global y_
-  if (X_.all() == None) or (y_.all() == None):
-    X_, y_ = get_data(filename)
-    y_ = process_y_(y_)
+  '''
+  Run the Pegasos algorithm `numruns` times and report the average runtime
+  and std.
+
+  If the --plot flag was used then plot the data and show the figure.
+  '''
+  X_, y_ = get_data(filename)
+  y_ = process_y_(y_)
 
   obj_ = []
   losses_ = []
@@ -45,8 +57,14 @@ def mysgdsvm(filename, k, numruns, max_iter=100, lambd=1e5):
   return obj_, losses_, cputs_
 
 def results(filename, k, numruns, max_iter=100, lambd=1e5):
-  global X_
-  global y_
+  '''
+  Run the Pegasos algorithm `numruns` times for k values of `[1, 20, 100, 200, N]` and report the average runtime
+  and std.
+
+  The k parameter is not used.
+
+  If the --plot flag was used then plot the data and show the figure.
+  '''
   X_, y_ = get_data(filename)
   y_ = process_y_(y_)
 
@@ -69,6 +87,10 @@ def results(filename, k, numruns, max_iter=100, lambd=1e5):
     plt.show()
 
 def plot_all_data(x, ys, labels, x_label=None, y_label=None, title=None, subplot=1):
+  '''
+  Plots the data in 5 subplots.
+  Does not show the figure.
+  '''
   ax = plt.subplot(1,5, subplot)
   for i in range(len(ys)):
     ax.plot(x, ys[i], label=labels[i])
@@ -80,12 +102,9 @@ def plot_all_data(x, ys, labels, x_label=None, y_label=None, title=None, subplot
   ax.legend()
 
 def plot_data_and_show(x, ys, labels, x_label=None, y_label=None, title=None):
-  plt.style.use('ggplot')
-  plt.rc('axes', labelsize=20)
-  plt.rc('xtick', labelsize=20)
-  plt.rc('ytick', labelsize=20)
-  plt.rc('legend', fontsize=18)
-  plt.rc('lines', linewidth=2)
+  '''
+  Plots the data in a plot and show the figure.
+  '''
   plt.figure(figsize=(8,6))
   for i in range(len(ys)):
     plt.plot(x, ys[i], label=labels[i])
@@ -104,6 +123,7 @@ def main():
     results(filename, k, numruns)
   else:
     mysgdsvm(filename, k, numruns)
+
 
 if __name__ == "__main__":
   main()

@@ -1,7 +1,7 @@
 This homework implements the Pegasos algorithm from [Pegasos: Primal Estimated sub-GrAdient SOlver for SVM](https://github.com/DeBestTrap/Intro-to-Machine-Learning/blob/main/HW4/files/pegasos.pdf) on the [MNIST-13](https://github.com/DeBestTrap/Intro-to-Machine-Learning/blob/main/HW4/MNIST-13.csv) dataset.
 
 How to use:
-```
+```None
 python mysgdsvm.py filename k numruns
 
 params
@@ -18,81 +18,27 @@ optional flags
     be included.
 ```
 
-Example, shows the plot for the "Summary and Results" section:
+## Example:
+Runs pegasos 2 times and output the avg runtime and std.
+```None
+python mysgdsvm.py "MNIST-13.csv" 5 2 --plot
 ```
-python mysgdsvm.py "MNIST-13.csv" 1 5 --plot --results
+
+## Example:
+Runs pegasos 3 times, output the avg runtime and std, and shows the plot of Objective Value vs. Iterations.
+```None
+python mysgdsvm.py "MNIST-13.csv" 1 3 --plot
 ```
+Yields:
+![plot](images/k1r3.png)
 
-
-# Q1
-<!-- ## a)
-### Symmetry
-### Positive Semi-Definite
-![a](./images/a.png)
-## b)
-### Symmetry
-### Positive Semi-Definite
-![b](./images/b.png)
-## c)
-### Symmetry
-### Positive Semi-Definite
-![c](./images/c.png)
-## d)
-### Symmetry
-### Positive Semi-Definite
-![d](./images/d.png) -->
-## a)
-### Symmetry
-### Positive Semi-Definite
-
-## b)
-### Symmetry
-
-$$
-  K(x_i, x_j)
-  =
-  K_1(x_i,x_j)
-  K_2(x_i,x_j)
-$$
-
-Since $K_1$ and $K_2$ are valid kernel functions,
-
-$$
-  K(x_i, x_j)
-  =
-  K_1(x_j,x_i)
-  K_2(x_j,x_i)
-  \triangleq
-  K(x_j, x_i)
-$$
-
-$$
-  \therefore 
-  \text{K is symmetric}
-$$
-
-$\therefore$ K is symmetric.
-
-### Positive Semi-Definite
-
-## c)
-### Symmetry
-### Positive Semi-Definite
-
-## d)
-### Symmetry
-### Positive Semi-Definite
-
-# Q2
-
-## Summary and Results
+## Example:
+Runs pegasos 5 times, output the avg runtime and std, and shows the plot of Objective Value vs. Iterations for `k = [1, 20, 100, 200, N]` (plot for the "Summary and Results" section):
+```None
+python mysgdsvm.py "MNIST-13.csv" ___ 5 --plot --results
+                                  ^^^
+                          This arg can be anything
+                              it is ignored
 ```
-max_iter = 100
-lambda = 1e5
-```
-![r](./images/part2_results.png)
-![r](./images/part2_avgstd.png)
-
-## Code
-Code and README can be found on Github.
-
+Yields:
+![plot](images/part2_results.png)

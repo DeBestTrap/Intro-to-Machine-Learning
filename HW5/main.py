@@ -67,6 +67,11 @@ class ML:
         return test_errors, np.mean(test_errors, axis=0), np.std(test_errors,axis=0)
 
     def train_neural_network(self, nn_stack):
+        '''
+        trains the neural network and returns the final neural network with the finished weights
+
+        nn_stack: the stack of operations that the neural network uses
+        '''
         data = Data(self.split_training_X_, self.split_training_y_, device)
         loader = DataLoader(dataset=data,batch_size=int(self.split_training_X_.shape[0]))
         my_NN = MyNeuralNetwork(nn_stack).to(device)
@@ -102,6 +107,12 @@ class ML:
         return my_NN
 
     def test_neural_network(self, my_NN):
+        '''
+        take a neural network and tests the results with the testing set
+
+        returns the error rate
+        '''
+
         correct = 0
         total = 0
         data = Data(self.testing_X_, self.testing_y_, device)
@@ -180,12 +191,25 @@ class ML:
         return [training_X_, training_y_, testing_X_, testing_y_]
     
     def shuffle_training_data(self):
+        '''
+        shuffles the training data
+        '''
         self.training_X_, self.training_y_ = skutil.shuffle(self.training_X_, self.training_y_)
 
     def shuffle_split_training_data(self):
+        '''
+        shuffles the split training data
+        '''
         self.split_training_X_, self.split_training_y_ = skutil.shuffle(self.split_training_X_, self.split_training_y_)
 
     def plot_results(train_percent, mean, std, title):
+        '''
+        Plot the results and save it to images folder.
+
+        mean: array of means
+        std: array of std
+        title: the title of the plot
+        '''
         plt.style.use('ggplot')
         plt.rc('axes', labelsize=20)
         plt.rc('xtick', labelsize=20)

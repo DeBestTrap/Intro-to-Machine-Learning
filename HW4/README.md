@@ -30,6 +30,7 @@ Runs pegasos 3 times, output the avg runtime and std, and shows the plot of Obje
 python mysgdsvm.py "MNIST-13.csv" 1 3 --plot
 ```
 Yields:
+
 ![plot](images/k1r3.png)
 
 ## Example:
@@ -41,4 +42,5 @@ python mysgdsvm.py "MNIST-13.csv" ___ 5 --plot --results
                               it is ignored
 ```
 Yields:
+
 ![plot](images/part2_results.png)

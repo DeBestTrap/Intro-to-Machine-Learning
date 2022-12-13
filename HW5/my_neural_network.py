@@ -14,17 +14,8 @@ class Data(Dataset):
     def __len__(self):
         return self.len
 
+
 class MyNeuralNetwork(nn.Module):
-    # def __init__(self,input,H,output):
-    #     super(NN,self).__init__()
-    #     self.linear1=nn.Linear(input,H)
-    #     self.linear2=nn.Linear(H,output)
-
-    # def forward(self,x):
-    #     x=torch.relu(self.linear1(x))  
-    #     x=torch.sigmoid(self.linear2(x))
-    #     return x
-
     def __init__(self, nn_stack):
         super(MyNeuralNetwork, self).__init__()
         self.stack = nn_stack
